@@ -17,9 +17,12 @@ def main_menu():
         elif user_choice.lower() == 'dice':
             dice()
             
-        elif user_choice == 'exit':
+        elif user_choice.lower() == 'exit':
             print('good bye')
             break
+        else:
+            print('INVALID INPUT')
+            main_menu()
 
 
 def coin():
@@ -31,15 +34,15 @@ def coin():
         print('would you like to flip some more? y or n')
         user_2nd_choice = str(input())
             
-        if user_2nd_choice == ('y'):
+        if user_2nd_choice.lower() == ('y'):
             coin()
                 
-        elif user_2nd_choice == ('n'):
+        elif user_2nd_choice.lower() == ('n'):
             main_menu()
                 
         else:
             print('INVALID INPUT')
-            coin()
+            main_menu()
 
 def dice():
     print('how many dice would you like to roll?')
@@ -50,14 +53,14 @@ def dice():
         print('would you like to roll some more? y or n')
         user_2nd_choice = str(input())
             
-        if user_2nd_choice == ('y'):
+        if user_2nd_choice.lower() == ('y'):
             dice()
                 
-        elif user_2nd_choice == ('n'):
+        elif user_2nd_choice.lower() == ('n'):
             main_menu()
                 
         else:
             print('INVALID INPUT')
-            dice()
+            main_menu()
 
 main_menu()
