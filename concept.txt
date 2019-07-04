@@ -1,0 +1,11 @@
+the program will open to ask what the user would like to do
+	and diplay a list of the options
+
+user will then input the option they would like to use
+
+then have the user input a numerical value 
+  that is the number of objects they want to roll
+  
+finally will ask if you would like to roll again(reprompting a number of objects) or go back
+
+go back returns to the main menu and asks user what they want to do
