@@ -1,66 +1,43 @@
-from coin import coin_flip
-from dice import dice_roll
+from coin import coinFlip
+from dice import diceRoll
 
-def main_menu():
-    
-    user_choice = ''
-    
-    while user_choice == '':
-        print('hello, what would you like to do?')
-        print('options: coin, dice, exit')
 
-        user_choice = str(input())
-
-        if user_choice.lower() == 'coin':
-            coin()
-            
-        elif user_choice.lower() == 'dice':
-            dice()
-            
-        elif user_choice.lower() == 'exit':
-            print('good bye')
-            break
-        else:
-            print('INVALID INPUT')
-            main_menu()
+def mainMenu():
+    print('hello, what would you like to do?')
+    print('options: coin, dice, exit')
+    userChoice = str(input())
+    if userChoice.lower() == 'coin':
+        coin()
+    elif userChoice.lower() == 'dice':
+        dice()
+    elif userChoice.lower() == 'exit':
+        print('good bye')
+        exit()
+    else:
+        print('INVALID INPUT')
+        return(mainMenu())
 
 
 def coin():
-    print('how many coins would you like to flip?')
-    coin_flip()
-    user_2nd_choice = ''
-
-    while user_2nd_choice == '':
-        print('would you like to flip some more? y or n')
-        user_2nd_choice = str(input())
-            
-        if user_2nd_choice.lower() == ('y'):
-            coin()
-                
-        elif user_2nd_choice.lower() == ('n'):
-            main_menu()
-                
-        else:
-            print('INVALID INPUT')
-            main_menu()
+    print('how many coins would you like to flip?\n(enter a numerical value)')
+    coinFlip()
+    tryAgain('flip')
 
 def dice():
-    print('how many dice would you like to roll?')
-    dice_roll()
-    user_2nd_choice = ''
+    print('how many dice would you like to roll?\n(enter a numerical value)')
+    diceRoll()
+    tryAgain('roll')
 
-    while user_2nd_choice == '':
-        print('would you like to roll some more? y or n')
-        user_2nd_choice = str(input())
-            
-        if user_2nd_choice.lower() == ('y'):
-            dice()
-                
-        elif user_2nd_choice.lower() == ('n'):
-            main_menu()
-                
-        else:
-            print('INVALID INPUT')
-            main_menu()
 
-main_menu()
+def tryAgain(varWord):
+    print('would you like to ' + varWord + ' some more? y or n')
+    userChoice = str(input())
+    if userChoice.lower() == ('y'):
+        pass
+    elif userChoice.lower() == ('n'):
+        mainMenu()
+    else:
+        print('INVALID INPUT!!!')
+        return(tryAgain())
+
+mainMenu()
