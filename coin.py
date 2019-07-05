@@ -6,7 +6,5 @@ def coin():
 
 def coinFlip():
     userChoice = int(input())
-    flipResult = []
-    for value in range(userChoice):
-        flipResult.append(coin())
+    flipResult = [coin() for value in range(userChoice)]
     print(flipResult)
