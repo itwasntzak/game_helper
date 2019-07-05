@@ -1,14 +1,12 @@
 import random
 
 def coin():
-  a = random.randrange(1, 3, 1)
-  return(a)
+    coinFlip = random.randrange(1, 3, 1)
+    return(coinFlip)
 
-def coin_flip():
-    coin_number = input()
-    coin_store = []
-    while int(coin_number) > len(coin_store):
-        coin_store.append(coin())
-        if int(coin_number) <= len(coin_store):
-            break
-    print(coin_store)
+def coinFlip():
+    userChoice = int(input())
+    flipResult = []
+    for value in range(userChoice):
+        flipResult.append(coin())
+    print(flipResult)
