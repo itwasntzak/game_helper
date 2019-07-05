@@ -6,7 +6,5 @@ def dice():
 
 def diceRoll():
     userChoice = int(input())
-    rollResult = []
-    for value in range(userChoice):
-        rollResult.append(dice())
+    rollResult = [dice() for value in range(userChoice)]
     print(rollResult)
